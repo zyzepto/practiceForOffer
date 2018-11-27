@@ -5,6 +5,12 @@ import java.util.LinkedList;
 
 public class BinaryTree {
 
+    /**
+     * @author zepto
+     * @Description git分支测试
+     * @date 2018/11/27
+     * @return void
+     **/
     public static void main(String[] args) {
        TreeNode root = new TreeNode(1);
        TreeNode node2 = new TreeNode(2);
