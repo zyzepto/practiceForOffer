@@ -15,7 +15,7 @@ public class BinaryTree {
        root.right = node3;
        node2.left = node4;
        node2.right = node5;
-       System.out.println(totalPath(root));
+       System.out.println(preorderTraversal(root));
     }
 
     /**
@@ -87,6 +87,29 @@ public class BinaryTree {
             if (!stack.empty()){
                 current = stack.pop();
                 current = current.right;
+            }
+        }
+        return list;
+    }
+
+    public static List<Integer> postOrderTraversal(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode current = root;
+        TreeNode preNode = null;
+        while (current != null || !stack.empty()) {
+            while (current != null) {
+                stack.push(current);
+                current = current.left;
+            }
+            if (!stack.empty()) {
+                current = stack.peek().right;
+                if (current == null || current == preNode) {
+                    current = stack.pop();
+                    list.add(current.val);
+                    preNode = current;
+                    current = null;
+                }
             }
         }
         return list;
