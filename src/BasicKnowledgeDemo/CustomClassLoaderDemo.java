@@ -5,7 +5,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 
-public class Main {
+public class CustomClassLoaderDemo {
 
     /**
      * @author zepto
